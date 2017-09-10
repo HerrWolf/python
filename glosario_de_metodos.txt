@@ -1,0 +1,323 @@
+list()
+sirve para partir un string letra por letra y convertirlo en lista
+ej.
+
+	>>> lista = list("herrwolf")
+	>>> lista
+	['h', 'e', 'r', 'r', 'w', 'o', 'l', 'f']
+
+.append()
+Sirve para agregar un elemento a una lista
+ej.
+
+	>>> lista = [1,2,3,4]
+	>>> lista
+	[1, 2, 3, 4]
+	>>> lista.append(5)
+	>>> lista
+	[1, 2, 3, 4, 5]
+
+.remove()
+Sirve para elimina un elemento de una lista
+ej.
+
+	>>> lista
+	[1, 2, 3, 4, 5]
+	>>> lista.remove(5)
+	>>> lista
+	[1, 2, 3, 4]
+
+.extend()
+Sirve para agregar mas de un elemento o una lista dentro de otra lista
+ej.
+
+	>>> lista
+	[1, 2, 3, 4]
+	>>> lista.extend([5,6])
+	>>> lista
+	[1, 2, 3, 4, 5, 6]
+
+
+split()
+sirve para partir una cadena palabra por palabra y convertirlo en una lista tomando los espacios como parametro para crear la lista
+ej.
+
+	>>> "youtube es genial".split()
+	['youtube', 'es', 'genial']
+
+tambien se le puede agregar como parametro el caracter con el cual se hara la division en este caso la coma (,)
+ej.
+
+	>>> comida_favorita = "lasagna, spaguetti ,pizza"
+	>>> comida_favorita.split(",")
+	['lasagna', 'spaguetti ', 'pizza']
+
+
+.join()
+Sirve para convertir una lista en una cadena
+ej.
+
+	>>> lista_comida_favorita = ['lasagna', 'spaguetti', 'pizza']
+	>>> lista_comida_favorita
+	['lasagna', 'spaguetti', 'pizza']
+	>>> ", ".join(lista_comida_favorita)
+	'lasagna, spaguetti, pizza'
+
+.index()
+Sirve para saber la posicion en index de un elemento de la lista
+ej.
+
+	>>> alfabeto = "abcdefghijklmnñopqrstuvwxyz"
+	>>> alfabeto
+	'abcdefghijklmnñopqrstuvwxyz'
+	>>> alfabeto_lista = list(alfabeto)
+	>>> alfabeto_lista
+	['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+	>>> alfabeto_lista.index("a")
+	0
+
+del
+sirve para eliminar variables o elementos de una lista
+ej.
+
+	>>> variable_basura = "variable basura"
+	>>> variable_basura
+	'variable basura'
+	>>> del variable_basura
+	>>> variable_basura
+	Traceback (most recent call last):
+	  File "<pyshell#29>", line 1, in <module>
+	    variable_basura
+	NameError: name 'variable_basura' is not defined
+
+	borrando un elemento de una lista
+	ej.
+
+	vocales = "aeiou"
+	>>> lista_vocales = list(vocales)
+	>>> lista_vocales
+	['a', 'e', 'i', 'o', 'u']
+	>>> lista_vocales
+	['e', 'i', 'o', 'u']
+	>>> del lista_vocales[-1]
+	>>> lista_vocales
+	['a', 'e', 'i', 'o']
+
+
+
+.insert()
+    sirve para agregar un elemento a una lista en la posicion que deseas
+    ej. agregar el numero 0 en el index 0 de la lista numeros
+
+    >>> numeros.insert(0,0)
+    >>> numeros
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+in
+Sirve para saber si elemento existe un lista o cadena
+ej.
+
+	>>> if "a" in vocales:
+	print("a es una vocal")
+	a es una vocal
+
+not in
+Sirve para saber si un elemento no existe en una lista o cadena
+ej.
+
+    >>> if "z" not in vocales:
+	print("z no es una vocal")
+    z no es una vocal
+
+input()
+Sirve para recibir informacion del usuario, la informacion se puede almacenar en una variable y el resultado siempre sera una cadena
+ej.
+
+	>>> input("Que dia del mes es hoy? ")
+	Que dia del mes es hoy? martes
+	'martes'
+
+	#guardando el input en una variable
+	>>> dia_del_mes = input("Que dia del mes es hoy? ")
+	Que dia del mes es hoy? Martes
+	>>> dia_del_mes
+	'Martes'
+
+	#convertir el imput en entero
+	>>> dia_del_mes = input("Que dia del mes es hoy? ")
+	Que dia del mes es hoy? 25
+	>>> int(dia_del_mes)
+	25
+
+	#agregando el entero a la variable
+	>>> dia_del_mes = int(dia_del_mes)
+	>>> dia_del_mes
+	25
+
+Slices
+    cuando queremos solo una parte de una lista usamos nombre_lista[posicionInicial:posicionFinal]
+    ej. tenemos la lista numeros del 0 al 10 y queremos listar los elementos del 0 al 5, el punto de partida es inclusivo y el punto final es exclusivo
+
+    >>> numeros
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    >>> numeros[0:6]
+    [0, 1, 2, 3, 4, 5]
+
+    tambien se pueden usar numeros negativos, por ej para ir del numero 5 al 7
+
+    >>> numeros
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    >>> numeros[-6:-3]
+    [5, 6, 7]
+
+
+Slices con steps
+    sirve para indicarle al slice el numero de pasos que dara al recorrer la lista y se usa se usa con un tercer parameto nombreLista[puntoInicio:puntoFinal:step]
+    ej. si queremos imprimir la lista de 2 en 2 *si dejamos en blanco el segundo parametro (puntoFinal) recorrera toda la lista hasta el final.
+
+    >>> numeros
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    >>> numeros[0::2]
+    [0, 2, 4, 6, 8, 10]
+
+Slices - borrar
+    para borrar usando slices usamos la palabra reservada "del" y el nombre de la lista y parametros a eliminar
+    ej. si queremos eliminar los indices 0 al 4 de nuestra lista
+
+    >>> numeros
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    >>> del numeros[0:5]
+    >>> numeros
+    [5, 6, 7, 8, 9, 10]
+
+Slices - reemplazar y/o agregar
+    para reemplazar elementos en nuestra lista o agregar usando slices debemos iniciar el slice en el indice que queremos reemplazar y sustituirlo por los elementos que se desean reemplazar o agregar a la lista
+    ej. si queremos agregar los numeros del 0 al 4 que eliminamos hacemos esto
+
+    >>> numeros
+    [5, 6, 7, 8, 9, 10]
+    >>> numeros[0:1] = [0,1,2,3,4,5]
+    >>> numeros
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Diccionarios
+    los diccionarios nos permiten almacenar conjuntos de datos
+    ej.
+
+     >>> diccionario_calificaciones = {"Pablo":9,"Aldo":10,"Juan":6,"Kevin":5}
+    >>> diccionario_calificaciones
+    {'Pablo': 9, 'Aldo': 10, 'Juan': 6, 'Kevin': 5}
+
+    si queremos ver un elemento determinado de nuestro diccionario
+    ej.
+
+    >>> diccionario_calificaciones["Aldo"]
+    10
+    >>> diccionario_calificaciones["Kevin"]
+    5
+
+    si queremos agregar un elemento a nuestro diccionario
+    ej.
+
+    >>> diccionario_calificaciones["Andres"] = "nueve"
+    >>> diccionario_calificaciones
+    {'Pablo': 9, 'Aldo': 10, 'Juan': 6, 'Kevin': 5, 'Andres': 'nueve'}
+
+    actualizar elementos en un diccionario
+    ej. actualizamos la calificacion de Andres de "nueve" a 9
+
+    >>> diccionario_calificaciones
+    {'Pablo': 9, 'Aldo': 10, 'Juan': 6, 'Kevin': 5, 'Andres': 'nueve'}
+    >>> diccionario_calificaciones["Andres"] = 9
+    >>> diccionario_calificaciones
+    {'Pablo': 9, 'Aldo': 10, 'Juan': 6, 'Kevin': 5, 'Andres': 9}
+
+    borrar elemento del diccionario
+    ej. borrar a Kevin del diccionario
+
+    >>> diccionario_calificaciones
+    {'Pablo': 9, 'Aldo': 10, 'Juan': 6, 'Kevin': 5, 'Andres': 9}
+    >>> del diccionario_calificaciones["Kevin"]
+    >>> diccionario_calificaciones
+    {'Pablo': 9, 'Aldo': 10, 'Juan': 6, 'Andres': 9}
+
+    Actualizar varios elementos del diccionario al mismo tiempo con la funcion .update()
+    ej. actualizaremos la calificacion de Andres y agregaremos a Britny
+
+    >>> diccionario_calificaciones
+    {'Pablo': 9, 'Aldo': 10, 'Juan': 6, 'Andres': 9}
+    >>> diccionario_calificaciones.update({"Andres":8,"Britny":5})
+    >>> diccionario_calificaciones
+    {'Pablo': 9, 'Aldo': 10, 'Juan': 6, 'Andres': 8, 'Britny': 5}
+
+
+.keys()
+    esta funcion sirve para obtener las llaves de un diccionario
+    ej.
+
+    >>> calificaciones
+    {'aldo': 9, 'kevin': 6, 'pedro': 8}
+    >>> for key in calificaciones.keys():
+        print(key)
+
+
+    aldo
+    kevin
+    pedro
+
+.values()
+    esta funcion sirve para obtener los valores de un diccionario
+    ej.
+
+    >>> calificaciones
+    {'aldo': 9, 'kevin': 6, 'pedro': 8}
+    >>> for value in calificaciones.values():
+        print(value)
+
+
+    9
+    6
+    8
+
+.items()
+    esta funcion nos regresa la key y value de un diccionario
+    ej.
+
+    >>> calificaciones
+    {'aldo': 9, 'kevin': 6, 'pedro': 8}
+    >>> for item in calificaciones.items():
+        print(item)
+
+
+    ('aldo', 9)
+    ('kevin', 6)
+    ('pedro', 8)
+
+
+
+Tuplas
+    las tuplas son inmutables y pueden contener int, strings, lista y/o diccionarios
+    ej.
+
+    >>> tupla = (1,"herrwolf", [0,1,2,3], {"aldo":9,"herrwolf":10})
+    >>> tupla
+    (1, 'herrwolf', [0, 1, 2, 3], {'aldo': 9, 'herrwolf': 10})
+
+    Aunque las tuplas en si mismas no son mutables si contiene en su interior un elemento mutable como una lista o un diccionario este se puede modificar pero no eliminar ni vaciar
+    ej. agregamos el numero 5 en la lista del indice [2]
+
+    >>> tupla
+    (1, 'herrwolf', [0, 1, 2, 3], {'aldo': 9, 'herrwolf': 10})
+    >>> tupla[2].append(5)
+    >>> tupla
+    (1, 'herrwolf', [0, 1, 2, 3, 5], {'aldo': 9, 'herrwolf': 10})
+
+    ej2. actualizacomos el primer elemento "aldo" y agregamos un nuevo elemento a el diccionario del indice [3]
+    >>> tupla
+    (1, 'herrwolf', [0, 1, 2, 3, 5], {'aldo': 9, 'herrwolf': 10})
+    >>> tupla[3].update({"aldo":8, "ana":7})
+    >>> tupla
+    (1, 'herrwolf', [0, 1, 2, 3, 5], {'aldo': 8, 'herrwolf': 10, 'ana': 7})
+
+
